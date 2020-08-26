@@ -2,7 +2,7 @@
 
 int main(void) {
   int numero, resto;
-  printf("Informe um numero:");
+  printf("Informe um numero: ");
   scanf("%d", &numero);
 
   resto = numero % 2;
