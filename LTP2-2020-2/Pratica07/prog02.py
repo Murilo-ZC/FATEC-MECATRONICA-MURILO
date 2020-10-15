@@ -13,3 +13,5 @@ while continuar:
   continuar = input("Continuar?") == 's'
 
 #Apresenta o saldo da carteira:
+saldo = carteira['receita'] - (carteira['despesa'] + carteira['emprestimo'])
+print("Saldo final:", saldo)
