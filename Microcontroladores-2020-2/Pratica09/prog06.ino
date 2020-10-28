@@ -15,7 +15,7 @@ const int ENTRADA_02 = D2;
 char msg[10];
 
 //Funções de interrupção - ISR
-void muda_estado_led(){
+void ICACHE_RAM_ATTR muda_estado_led(){
   digitalWrite(LED2, !digitalRead(LED2));
 }
 
