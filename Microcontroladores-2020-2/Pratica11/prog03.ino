@@ -27,7 +27,7 @@ volatile int posicao = 0;
 volatile unsigned long tempoBotao;
 
 //Variáveis para comunicação Wifi
-const char* URL_SERVIDOR = "https://viacep.com.br/ws/01001000/json/";
+const char* URL_SERVIDOR = "http://viacep.com.br/ws/01001000/json/";
 //Cliente para realizar a requisição
 WiFiClient client;
 HTTPClient http;
@@ -63,7 +63,7 @@ void inicializa_hardware(){
 void inicializar_wifi(){
   //Conecta com o nome e a senha da rede
   //LEMBRAR DE APAGAR ESSA INFORMAÇÃO AO SUBIR NO GITHUB!!
-  WiFi.begin("minhaRede", "olamundo");
+  WiFi.begin("SEU_REDE", "SUA_SENHA");
   //Aguarda a comunicação estar pronta
   Serial.print("Conectando");
   while (WiFi.status() != WL_CONNECTED)
