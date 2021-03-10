@@ -22,24 +22,20 @@ void inicializa_hardware(){
   pinMode(BOTAO2, INPUT_PULLUP);
 }
 
-ICACHE_RAM_ATTR void mudar_led_int(){
-  digitalWrite(LED1, !digitalRead(LED1));
-}
-
-void inicializa_interrupcoes(){
-  //Para definir uma interrupção
-  attachInterrupt(digitalPinToInterrupt(BOTAO1), mudar_led_int, FALLING);
-
-}
+long tempo;
 
 void setup() {
   inicializa_hardware();
-  inicializa_interrupcoes();
+  //Inicializar o tempo
+  tempo = millis();
 }
 
 void loop() {
-  digitalWrite(LED2, LED_LIGADO);
-  delay(500);
-  digitalWrite(LED2, LED_DESLIGADO);
-  delay(500);
+  if(millis() - tempo >= 500){
+    //Atualizar minha hora anotada
+    tempo = millis();
+    //Ação desejada
+    digitalWrite(LED2, !digitalRead(LED2));
+  }
+  
 }
