@@ -10,7 +10,7 @@ int main(void) {
     printf("[%i]:%c\n", i, msg[i]);
   //Não podemos fazer atribuições diretas para vetores
   // msg = "Oi eu sou o Goku!"; //Não funciona em C
-  sprintf(msg, "Oi eu sou o Goku!\n");
+  sprintf(msg, "Oi eu sou o Goku!\n"); //Serve para escrever dentro da string
   printf("%s", msg);
   int tamanho_da_string = strlen(msg);
   printf("Tamanho da String: %i\n", tamanho_da_string);
