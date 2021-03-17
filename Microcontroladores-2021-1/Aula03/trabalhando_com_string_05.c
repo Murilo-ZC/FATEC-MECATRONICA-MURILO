@@ -9,11 +9,22 @@ int main(void) {
   printf("%s\n", msg);
   cAtributo = 0;
   cMsg = 0;
+  //Pega o primeiro atributo da msg
   while(msg[cMsg] != ';'){
     atributo[cAtributo] = msg[cMsg];
     cAtributo++;
     cMsg++;
   }
+  atributo[cAtributo] = '\0';
+  //Pega o segundo atributo da msg
+  cMsg++;//Avança mais uma posicao
+  cAtributo = 0;
+  while(msg[cMsg] != ';'){
+    atributo[cAtributo] = msg[cMsg];
+    cAtributo++;
+    cMsg++;
+  }
+  atributo[cAtributo] = '\0';
   printf("Atributo: %s\n", atributo);
   return 0;
 }
