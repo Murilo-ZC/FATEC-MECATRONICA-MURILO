@@ -25,21 +25,27 @@ void inicializa_hardware(){
   Serial.begin(9600); //9600, 19200, 38400 (bluetooth), 115200 (ethernet)
 }
 
-int contadora = 100;
 char msg[50];
 
 void setup() {
   inicializa_hardware();
-  Serial.println("Inicio da contagem:");
+  Serial.println("Sistema Remoto:");
 }
 
 void loop() {
-   sprintf(msg, "Contagem: %d", contadora);
-   Serial.println(msg);
-   delay(1000);
-   contadora++;
-   if(contadora >= 10){
-    Serial.println("Plus Ultra");
-    contadora = 0;
-   }
+  //Verifica se alguma mensagem chegou
+  if(Serial.available() > 0){
+    //Le um caracter da porta serial
+    char dado = (char) Serial.read();
+    if(dado == 'L')
+      digitalWrite(LED1, LED_LIGADO);
+    else if (dado == 'D')
+      digitalWrite(LED1, LED_DESLIGADO);
+    else if(dado == 'E'){
+      sprintf(msg,"Entrada: %d", digitalRead(BOTAO1)==BOTAO_LIGADO ? 1 : 0);
+      Serial.println(msg);
+    }
+    else
+      Serial.println("Parametro desconhecido!");
+  }
 }
