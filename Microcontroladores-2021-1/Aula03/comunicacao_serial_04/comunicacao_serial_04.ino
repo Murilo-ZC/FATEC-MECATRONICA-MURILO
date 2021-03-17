@@ -42,7 +42,14 @@ void loop() {
     else if (dado == 'D')
       digitalWrite(LED1, LED_DESLIGADO);
     else if(dado == 'E'){
+      //Forma 1
       sprintf(msg,"Entrada: %d", digitalRead(BOTAO1)==BOTAO_LIGADO ? 1 : 0);
+      //Forma 2
+      //if(digitalRead(BOTAO1) == BOTAO_LIGADO)
+      //  sprintf(msg,"Entrada: 1");
+      //else
+      //  sprintf(msg,"Entrada: 0");
+        
       Serial.println(msg);
     }
     else
