@@ -1,0 +1,1 @@
+# 15. Write a Python program to get the maximum and minimum value in a dictionary.
