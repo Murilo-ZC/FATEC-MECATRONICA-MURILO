@@ -2,8 +2,14 @@
 #Sample Dictionary : {0: 10, 1: 20}
 #Expected Result : {0: 10, 1: 20, 2: 30}
 
-dicionario = {}
+#Cria um dicionário
+meuDicionario = {0: 10, 1: 20}
+
 chave = input("Informe uma chave:")
 valor = input("Informe um valor:")
-dicionario[chave] = valor
-print(dicionario)
+
+#Adiciona chave/valor ao nosso dicionário
+meuDicionario[chave] = valor
+
+#Exibe o dicionário
+print(meuDicionario)

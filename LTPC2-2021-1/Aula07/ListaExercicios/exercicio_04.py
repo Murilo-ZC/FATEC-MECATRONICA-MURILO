@@ -1,11 +1,13 @@
 # 4. Write a Python script to check whether a given key already exists in a dictionary. Go to the editor
 
-#dicionário exemplo
-dicionario = {"ola":1, "mundo": 2}
+#Cria um dicionário inicial
+meus_dados = {"1":10, "2":178, "3": 456789, "nome": "FATEC"}
 
-chave = input("informe uma chave:")
+chave = input("Informe a chave desejada:")
 
-if chave in dicionario:
+#Verifica se a chave existe no dicionário
+if chave in meus_dados:     #if chave in meus_dados.keys():
     print("Chave já existe!")
+    print("Valor atribuido a chave:", meus_dados[chave])
 else:
-    print("Nova chave!!")
+    print("Nova chave!")

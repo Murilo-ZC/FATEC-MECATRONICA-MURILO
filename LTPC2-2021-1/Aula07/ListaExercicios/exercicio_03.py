@@ -6,24 +6,20 @@
 # dic3={5:50,6:60}
 # Expected Result : {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
 
-#Declara os dicionários
+#Dicionários que já existem
 dic1={1:10, 2:20}
 dic2={3:30, 4:40}
 dic3={5:50,6:60}
 
-#Dicionário que vai receber os dados
+#Criar um dicionário vazio
 dic4 = {}
 
-#Para adicionar todos eles em conjunto
-dic4.update(dic1)
-
-#Apenas para verificar como está ficando o dic4
+#Mostra o dicionário novo
 print(dic4)
 
-#Adicionar os demais dicionários
+#Concatena dois dicionários
+dic4.update(dic1)
 dic4.update(dic2)
 dic4.update(dic3)
 
-#Exibe o resultado final
-print("Resultado final:")
 print(dic4)
